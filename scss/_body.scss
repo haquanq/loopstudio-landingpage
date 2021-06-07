@@ -1,0 +1,186 @@
+.section__body {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 300px 0 200px 0;
+}
+
+.sec__body {
+    min-width: 325px; max-width: 1140px;
+    width: 90%;
+}
+
+.sec__body__part1 {
+    display: flex;
+    position: relative;
+    margin-bottom: 200px;
+    img {
+        width: 750px;
+        object-fit: cover;
+    }
+    &--para {
+        position: absolute;
+        padding: 90px 0 0 100px;
+        background: white;
+        max-width: 75ch;
+        bottom: 0; right: 0;
+        transition: 150ms ease-in-out;
+        h1 {
+            margin-bottom: 30px;
+            font-size: 3em;
+            font-weight: 300;
+            text-transform: uppercase;
+            font-family: "Josefin sans", sans-serif;
+        }
+        p { 
+            opacity: 0.7;
+            line-height: 1.8;
+            font-family: "Alata", sans-serif;
+            font-size: 1em;
+        }
+    }
+}
+
+.sec__body__part2 {
+    &--title {
+        display: flex;
+        justify-content: space-between;
+        h1 {
+            margin-bottom: 30px;
+            font-size: 3em;
+            font-weight: 300;
+            text-transform: uppercase;
+            font-family: "Josefin sans", sans-serif;                
+        }
+        button {
+            border: 1px solid black;
+            width: 150px; height: 40px;
+            font-family: "Alata", sans-serif;
+            font-size: 1em;
+            text-transform: uppercase;
+            color: black;
+            background: transparent;
+            letter-spacing: 3px;
+        }
+    }
+    &--grid {
+        margin-top: 50px;
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(400px, 1fr));
+        .card_container {
+            position: relative;
+            background: chartreuse;
+            &::after {
+                position: absolute;
+                display: block;
+                top: 0; bottom: 0;
+                left: 0; right: 0;
+                content: "";
+                background: linear-gradient(rgba(black, 0.1) 60%, rgba(black, 0.7) 90%);
+            }
+            img {
+                width: 100%; height: 100%;
+                object-fit: cover;
+            }
+            h1 {
+                left: 40px;
+                bottom: 30px;
+                position: absolute; z-index: 2;
+                font-family: "Josefin sans", sans-serif;
+                font-size: 2em;
+                font-weight: 300;
+                color: white;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+        }
+    }   
+}
+
+@media screen and (max-width: 1240px) {
+    .sec__body__part1 {
+        display: flex;
+        justify-content: flex-end;
+        img {
+            margin-bottom: 140px;
+        }
+        &--para {
+            padding: 70px 50px 0 0;
+            top: initial; bottom: 0;
+            left: 0; right: initial;
+            h1 {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .sec__body__part1 {
+        display: flex;
+        justify-content: initial;
+        flex-direction: column;
+        align-items: center;
+        img {
+            margin: 0;
+            width: 100%;
+        }
+        &--para {
+            position: initial;
+            max-width: 80%;
+            padding: 70px 0 0 0;
+            top: initial; bottom: 0;
+            left: 0; right: initial;
+            h1 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            p {
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .section__body {
+        margin: 300px 0 150px 0;
+    }
+    .sec__body__part2 {
+        &--grid {
+            grid-template-columns: minmax(325px, 1fr);
+            grid-template-rows: auto;
+            grid-gap: 20px;
+            .card_container {
+                &::after {
+                    background: linear-gradient(90deg, rgba(black, 0.5) 30%, rgba(rgba(0, 0, 0, 0.378), 0.05) 90%);
+                }
+                h1 {
+                    font-size: 1.8em;
+                    left: 20px;
+                    bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    .title__container {
+        padding: 25px;
+        h1 {
+            font-size: 3em;
+        }
+    }
+    .sec__body__part1 {
+        &--para {
+            max-width: 100%;
+            h1 {
+                font-size: 2em;
+            }
+        }
+    }
+}

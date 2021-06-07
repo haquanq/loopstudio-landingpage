@@ -1,0 +1,196 @@
+.section__head {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    &__image {
+        position: absolute; z-index: -1;
+        img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            object-position: center top;
+        }
+    }
+}
+
+.sec__head {
+    max-width: 1140px; min-width: 325px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    &__navi {
+        width: 100%;
+    }
+}
+
+.nav__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; height: 150px;
+    &__link {
+        display: flex;
+        justify-content: space-between;
+        width: 380px;
+        font-family: "Alata", sans-serif;
+        a {
+            color: white;
+        }
+    }
+    &__menu {
+        display: none;
+        cursor: pointer;
+        span {
+            display: block;
+            width: 26px;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+            transition: 150ms ease-in-out;
+        }
+    }
+    &__menu.open {
+        span {
+            margin: 0;
+        }
+        & span:nth-child(1) {
+            transform: translateY(3px) rotate(45deg);
+        }
+        & span:nth-child(2) {
+            opacity: 0;
+        }
+        & span:nth-child(3) {
+            transform: translateY(-3px) rotate(-45deg);
+        }
+    }
+}
+
+.title__container {
+    width: max-content;
+    margin-top: 80px;
+    padding: 30px 100px 20px 30px;
+    border: 2px solid white;
+    h1 {
+        color: white;
+        font-size: 4em;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-family: "Josefin Sans", sans-serif;
+    }
+}
+
+.section__footer {
+    display: flex;
+    justify-content: center;
+    width: 100%; height: 180px;
+    background: black;
+}
+
+
+.sec__footer {
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    min-width: 350px; max-width: 1140px;
+    width: 90%;
+    &__logo {
+        display: flex;
+        align-items: center;
+    }
+    &__text {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        color: white;
+        opacity: 0.5;
+        letter-spacing: 0.5px;
+    }
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        img {
+            margin-left: 15px;
+            width: 20px; height: 20px;
+        }
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 400px;
+        a { 
+            font-family: "Alata", sans-serif;
+            font-size: 1em;
+            letter-spacing: 0.5px;
+            color: white;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav__container {
+        &__link {
+            display: none;
+        }
+        &__menu {
+            display: initial;
+        }
+    }
+
+    .section__footer {
+        height: max-content;
+    }
+    .sec__footer {
+        grid-template-columns: minmax(325px, 1fr);
+        grid-template-rows: auto;
+        & > * {
+            justify-content: center;
+            width: initial;
+            align-items: initial;
+            margin: 20px 0;
+        }
+        &__link {
+            width: initial;
+            margin-bottom: 30px;
+            a {
+                margin: 0 10px;
+            }
+        }
+        &__icon {
+            grid-row: 3;
+        }
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .title__container {
+        transition: 150ms ease;
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    .title__container {
+        padding: 25px;
+        h1 {
+            font-size: 3em;
+        }
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .sec__footer {
+        &__link {
+            align-items: center;
+            flex-direction: column;
+            a {
+                font-size: 1.125em;
+                margin: 10px 0;
+            }
+        }
+    }
+}
