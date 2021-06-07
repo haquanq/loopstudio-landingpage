@@ -395,10 +395,7 @@
 
 .sec__body__part2--grid .card_container img {
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
+  width: 100%;
 }
 
 .sec__body__part2--grid .card_container h1 {
