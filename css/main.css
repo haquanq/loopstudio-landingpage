@@ -373,7 +373,7 @@
   grid-gap: 50px;
 }
 
-.sec__body__part2 h1 {
+.sec__body__part2 > h1 {
   -ms-flex-item-align: end;
       align-self: flex-end;
   -ms-grid-column: 1;
@@ -385,7 +385,7 @@
   font-family: "Josefin sans", sans-serif;
 }
 
-.sec__body__part2 button {
+.sec__body__part2 > button {
   -ms-grid-column-align: end;
       justify-self: end;
   -ms-grid-column: 3;
@@ -417,7 +417,6 @@
 
 .sec__body__part2--grid .card_container {
   position: relative;
-  background: chartreuse;
 }
 
 .sec__body__part2--grid .card_container::after {
@@ -439,17 +438,56 @@
      object-fit: cover;
 }
 
-.sec__body__part2--grid .card_container h1 {
+.sec__body__part2--grid .card_container > div {
   left: 40px;
   bottom: 30px;
   position: absolute;
   z-index: 2;
   font-family: "Josefin sans", sans-serif;
+  pointer-events: none;
+}
+
+.sec__body__part2--grid .card_container h1 {
   font-size: 2em;
   font-weight: 300;
   color: white;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+.card_btn {
+  display: none;
+  height: 0;
+  -webkit-transition: 150ms ease;
+  transition: 150ms ease;
+}
+
+.card_btn button {
+  display: none;
+  opacity: 0;
+  margin-top: 10px;
+  width: 100px;
+  height: 30px;
+  font-family: "Alata", sans-serif;
+  background: transparent;
+  color: white;
+  font-size: 0.85em;
+  border: 1px solid white;
+  cursor: pointer;
+  -webkit-transition: 150ms ease;
+  transition: 150ms ease;
+  text-transform: uppercase;
+  pointer-events: all;
+}
+
+@media (hover: hover) {
+  .card_btn > button:hover {
+    width: 120px;
+  }
+  .sec__body__part2 > button:hover {
+    color: white;
+    background: black;
+  }
 }
 
 @media screen and (max-width: 1240px) {
@@ -511,13 +549,6 @@
   }
   .sec__body__part1--para p {
     text-align: center;
-  }
-}
-
-@media (hover: hover) {
-  .sec__body__part2 > button:hover {
-    color: white;
-    background: black;
   }
 }
 

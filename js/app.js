@@ -1,5 +1,8 @@
 const cardImg = document.querySelectorAll(".card_img");
 const cardText = document.querySelectorAll(".card_title");
+const card_btn = document.querySelectorAll(".card_btn");
+const button = document.querySelectorAll(".card_btn button");
+const card_cont = document.querySelectorAll(".card_container")
 
 const imgData = {
     name: ["curiosity", "deep earth", "fisheye", "from above", "grid", "night arcade", "pocket borealis", "soccer team"],
@@ -54,12 +57,19 @@ menu_btn.addEventListener("click", () => {
 
 
 
-
-
-
-
-
-
-
+for (let i = 0; i < card_cont.length; i++) {
+    card_cont[i].addEventListener("mouseenter", () => {
+        card_btn[i].style.display = "block";
+        setTimeout(() => {card_btn[i].style.height = "50px"}, 50)
+        setTimeout(() => {button[i].style.display = "initial"},50)
+        setTimeout(() => {button[i].style.opacity = 1}, 70)
+    })
+    card_cont[i].addEventListener("mouseleave", () => {
+        button[i].style.opacity = null
+        setTimeout(() => {button[i].style.display = null}, 100)
+        setTimeout(() => {card_btn[i].style.height = null}, 150)
+        setTimeout(() => {card_btn[i].style.display = null}, 300)
+    })        
+}
 
 

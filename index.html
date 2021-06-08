@@ -51,39 +51,79 @@
       <div class="sec__body__part2">
         <h1>Our creations</h1>
         <button>See all</button>
-        
+
         <div class="sec__body__part2--grid">
           <div class="card_container">
             <img class="card_img" src="" alt="animage">
-            <h1 class="card_title">deep<br>earth</h1>
+            <div>
+              <h1 class="card_title">deep<br>earth</h1>
+              <div class="card_btn">
+                <button>More Info</button>
+              </div>
+            </div>
           </div>
           <div class="card_container">
             <img class="card_img" src="" alt="animage">
-            <h1 class="card_title">night<br>arcade</h1>
+            <div>
+              <h1 class="card_title">night<br>arcade</h1>
+              <div class="card_btn">
+                <button>More Info</button>
+              </div>
+            </div>
           </div>
           <div class="card_container">
             <img class="card_img" src="" alt="animage">
-            <h1 class="card_title">soccer<br>team vr</h1>
+            <div>
+              <h1 class="card_title">soccer<br>team vr</h1>
+              <div class="card_btn">
+                <button>More Info</button>
+              </div>
+            </div>
           </div>
           <div class="card_container">
             <img class="card_img" src="" alt="animage">
-            <h1 class="card_title">the<br>grid</h1>
+            <div>
+              <h1 class="card_title">the<br>grid</h1>
+              <div class="card_btn">
+                <button>More Info</button>
+              </div>
+            </div>
           </div>
           <div class="card_container">
             <img class="card_img" src="" alt="animage">
-            <h1 class="card_title">from up<br>above vr</h1>
+            <div>
+              <h1 class="card_title">from up<br>above vr</h1>
+              <div class="card_btn">
+                <button>More Info</button>
+              </div>
+            </div>
           </div>
           <div class="card_container">
             <img class="card_img" src="" alt="animage">
-            <h1 class="card_title">pocket<br>borealis</h1>
+            <div>
+              <h1 class="card_title">pocket<br>borealis</h1>
+              <div class="card_btn">
+                <button>More Info</button>
+              </div>
+            </div>
           </div>
           <div class="card_container">
             <img class="card_img" src="" alt="animage">
-            <h1 class="card_title">the<br>curiosity</h1>
+            <div>
+              <h1 class="card_title">the<br>curiosity</h1>
+              <div class="card_btn">
+                <button>More Info</button>
+              </div>
+            </div>
           </div>
           <div class="card_container">
             <img class="card_img" src="" alt="animage">
-            <h1 class="card_title">make it<br>fisheye</h1>
+            <div>
+              <h1 class="card_title">make it<br>fisheye</h1>
+              <div class="card_btn">
+                <button>More Info</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -114,6 +154,15 @@
     </div>
   </section>
 
-  <script src="./app.js"></script>
+  <script src="./js/app.js"></script>
+  <script type="text/javascript" src="./js/vanilla-tilt.min.js"></script>
+  <script type="text/javascript">
+    	VanillaTilt.init(document.querySelectorAll(".card_container"), {
+		    max: 6,
+        glare: true,
+        "max-glare": 0.3,
+		    speed: 200
+	    });
+  </script>
 </body>
 </html>

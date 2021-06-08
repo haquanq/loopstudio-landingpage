@@ -45,7 +45,7 @@
     display: grid;
     grid-template-columns: 200px auto 150px;
     grid-gap: 50px;
-    h1 {
+    & > h1 {
         align-self: flex-end;
         grid-column: 1 / 3;
         font-size: 3em;
@@ -53,7 +53,7 @@
         text-transform: uppercase;
         font-family: "Josefin sans", sans-serif;                
     }
-    button {
+    & > button {
         justify-self: end;
         grid-column: 3;
         border: 2px solid black;
@@ -75,7 +75,6 @@
         grid-template-rows: repeat(auto-fit, minmax(400px, 1fr));
         .card_container {
             position: relative;
-            background: chartreuse;
             &::after {
                 position: absolute;
                 display: block;
@@ -89,11 +88,14 @@
                 width: 100%;
                 object-fit: cover;
             }
-            h1 {
+            & > div {
                 left: 40px;
                 bottom: 30px;
                 position: absolute; z-index: 2;
                 font-family: "Josefin sans", sans-serif;
+                pointer-events: none;
+            }
+            h1 {
                 font-size: 2em;
                 font-weight: 300;
                 color: white;
@@ -103,6 +105,44 @@
         }
     }   
 }
+
+.card_btn {
+    display: none;
+    height: 0;
+    transition: 150ms ease;
+    button {
+        display: none;
+        opacity: 0;
+        margin-top: 10px;
+        width: 100px; height: 30px;
+        font-family: "Alata", sans-serif;
+        background: transparent;
+        color: white;
+        font-size: 0.85em;
+        border: 1px solid white;
+        cursor: pointer;
+        transition: 150ms ease;
+        text-transform: uppercase;
+        pointer-events:all;
+    }
+}
+
+@media (hover:hover) {
+    .card_btn {
+        & > button:hover {
+            width: 120px;
+        }
+    }
+    .sec__body__part2 {
+        & > button {
+            &:hover {
+                color: white;
+                background: black;
+            }
+        }
+    }
+}
+
 
 @media screen and (max-width: 1240px) {
     .sec__body__part1 {
@@ -145,15 +185,6 @@
             p {
                 text-align: center;
             }
-        }
-    }
-}
-
-@media (hover:hover) {
-    .sec__body__part2 {
-        & > button:hover {
-            color: white;
-            background: black;
         }
     }
 }
