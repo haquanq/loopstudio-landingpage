@@ -50,10 +50,14 @@ const menuCon = document.querySelector(".nav__menu")
 const menuText = document.querySelector(".nav__menu div")
 
 let menuState = false
+
+noScroll = () => {
+    window.scrollTo(0,0)
+}
 menu_btn.addEventListener("click", () => {
     if (menuState == false) {
+        window.addEventListener("scroll", noScroll)
         menu_btn.classList.add("open")
-
         menuCon.style.display = "flex"
         setTimeout(() => {menuCon.style.height = "100%"}, 30)
         setTimeout(() => {menuText.style.display = "flex"}, 250)
@@ -67,6 +71,7 @@ menu_btn.addEventListener("click", () => {
         setTimeout(() => {menuText.style.display = null}, 300)
         setTimeout(() => {menuCon.style.height = null}, 300)
         setTimeout(() => {menuCon.style.display = null}, 700)
+        window.removeEventListener("scroll", noScroll)
         return menuState = false
     } 
 })
