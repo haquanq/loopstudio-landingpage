@@ -157,18 +157,9 @@
   <script src="./js/app.js"></script>
   <script type="text/javascript" src="./js/vanilla-tilt.min.js"></script>
   <script type="text/javascript">
-    let desktop = new Boolean();
-    checkDesktop = () => {
-      if (window.innerWidth > 1024) {
-        return desktop = true
-      } else return desktop = false
-    }
-    checkDesktop()
-    window.addEventListener("resize", () => {checkDesktop()})
-
     document.querySelectorAll(".card_container").forEach( e => {
       e.addEventListener("mousemove", () => {
-        if (desktop == true) {
+        if (window.innerWidth > 1240) {
          VanillaTilt.init(document.querySelectorAll(".card_container"), {max: 6, glare: true, "max-glare": 0.3, speed: 200});
         } else {
           e.addEventListener("touchmove", () => {
