@@ -66,6 +66,10 @@ menu_btn.addEventListener("click", () => {
 
 window.addEventListener("resize", () => { imgData.resizeImg() })
 
+animStart = () => {
+    
+}
+
 for (let i = 0; i < card_cont.length; i++) {
     card_cont[i].addEventListener("mouseenter", () => {
         if (mobile == false) {
@@ -83,5 +87,23 @@ for (let i = 0; i < card_cont.length; i++) {
             setTimeout(() => {card_btn[i].style.display = null}, 300)    
         }
     })
+
+    card_cont[i].addEventListener("touchstart", () => {
+        if (mobile == false) {
+            card_btn[i].style.display = "block";
+            setTimeout(() => {card_btn[i].style.height = "50px"}, 50)
+            setTimeout(() => {button[i].style.display = "initial"},50)
+            setTimeout(() => {button[i].style.opacity = 1}, 70)
+        }
+    })
+    card_cont[i].addEventListener("touchend", () => {
+        if (mobile == false) {
+            button[i].style.opacity = null
+            setTimeout(() => {button[i].style.display = null}, 100)
+            setTimeout(() => {card_btn[i].style.height = null}, 150)
+            setTimeout(() => {card_btn[i].style.display = null}, 300)    
+        }
+    })
+
 
 }
