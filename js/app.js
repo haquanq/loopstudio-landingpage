@@ -4,6 +4,8 @@ const card_btn = document.querySelectorAll(".card_btn");
 const button = document.querySelectorAll(".card_btn button");
 const card_cont = document.querySelectorAll(".card_container")
 
+let mobile = new Boolean();
+
 const imgData = {
     name: ["curiosity", "deep earth", "fisheye", "from above", "grid", "night arcade", "pocket borealis", "soccer team"],
     type: "jpg",
@@ -34,9 +36,16 @@ const imgData = {
     },
     resizeImg: () => {
         if (window.innerWidth <= 680) {
-            imgData.getImg(imgData.mobile)
-        } else imgData.getImg(imgData.desktop)
-    }
+            imgData.getImg(imgData.mobile);
+            mobile = true;
+            console.log(mobile);
+        } 
+        if (window.innerWidth > 680) {
+            imgData.getImg(imgData.desktop)
+            mobile = false;
+            console.log(mobile);
+        }
+    } 
 }
 
 imgData.resizeImg()
@@ -55,21 +64,24 @@ menu_btn.addEventListener("click", () => {
     } 
 })
 
-
+window.addEventListener("resize", () => { imgData.resizeImg() })
 
 for (let i = 0; i < card_cont.length; i++) {
     card_cont[i].addEventListener("mouseenter", () => {
-        card_btn[i].style.display = "block";
-        setTimeout(() => {card_btn[i].style.height = "50px"}, 50)
-        setTimeout(() => {button[i].style.display = "initial"},50)
-        setTimeout(() => {button[i].style.opacity = 1}, 70)
+        if (mobile == false) {
+            card_btn[i].style.display = "block";
+            setTimeout(() => {card_btn[i].style.height = "50px"}, 50)
+            setTimeout(() => {button[i].style.display = "initial"},50)
+            setTimeout(() => {button[i].style.opacity = 1}, 70)
+        }
     })
     card_cont[i].addEventListener("mouseleave", () => {
-        button[i].style.opacity = null
-        setTimeout(() => {button[i].style.display = null}, 100)
-        setTimeout(() => {card_btn[i].style.height = null}, 150)
-        setTimeout(() => {card_btn[i].style.display = null}, 300)
-    })        
+        if (mobile == false) {
+            button[i].style.opacity = null
+            setTimeout(() => {button[i].style.display = null}, 100)
+            setTimeout(() => {card_btn[i].style.height = null}, 150)
+            setTimeout(() => {card_btn[i].style.display = null}, 300)    
+        }
+    })
+
 }
-
-
