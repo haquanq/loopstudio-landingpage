@@ -87,8 +87,8 @@
         content: "";
         background: linear-gradient(
             rgba(black, 0.1) 50%, 
-            rgba(black, 0.6) 70%,
-            rgba(black, 0.8) 90%
+            rgba(black, 0.5) 70%,
+            rgba(black, 0.7) 90%
             );
     }
     img {
@@ -220,8 +220,8 @@
             .card_container {
                 &::after {
                     background: linear-gradient(90deg, 
-                    rgba(black, 0.8) 5%, 
-                    rgba(rgba(0, 0, 0, 1), 0.6) 20%,
+                    rgba(black, 0.7) 5%, 
+                    rgba(rgba(0, 0, 0, 1), 0.5) 20%,
                     rgba(rgba(0, 0, 0, 1), 0.3) 35%
                     );
                 }
