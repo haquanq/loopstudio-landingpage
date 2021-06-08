@@ -4,8 +4,6 @@ const card_btn = document.querySelectorAll(".card_btn");
 const button = document.querySelectorAll(".card_btn button");
 const card_cont = document.querySelectorAll(".card_container")
 
-let mobile = new Boolean();
-
 const imgData = {
     name: ["curiosity", "deep earth", "fisheye", "from above", "grid", "night arcade", "pocket borealis", "soccer team"],
     type: "jpg",
@@ -37,13 +35,9 @@ const imgData = {
     resizeImg: () => {
         if (window.innerWidth <= 680) {
             imgData.getImg(imgData.mobile);
-            mobile = true;
-            console.log(mobile);
         } 
         if (window.innerWidth > 680) {
             imgData.getImg(imgData.desktop)
-            mobile = false;
-            console.log(mobile);
         }
     } 
 }
@@ -66,13 +60,9 @@ menu_btn.addEventListener("click", () => {
 
 window.addEventListener("resize", () => { imgData.resizeImg() })
 
-animStart = () => {
-    
-}
-
 for (let i = 0; i < card_cont.length; i++) {
     card_cont[i].addEventListener("mouseenter", () => {
-        if (mobile == false) {
+        if (window.innerWidth > 540) {
             card_btn[i].style.display = "block";
             setTimeout(() => {card_btn[i].style.height = "50px"}, 50)
             setTimeout(() => {button[i].style.display = "initial"},50)
@@ -80,30 +70,11 @@ for (let i = 0; i < card_cont.length; i++) {
         }
     })
     card_cont[i].addEventListener("mouseleave", () => {
-        if (mobile == false) {
+        if (window.innerWidth > 540) {
             button[i].style.opacity = null
             setTimeout(() => {button[i].style.display = null}, 100)
             setTimeout(() => {card_btn[i].style.height = null}, 150)
             setTimeout(() => {card_btn[i].style.display = null}, 300)    
         }
     })
-
-    card_cont[i].addEventListener("touchstart", () => {
-        if (mobile == false) {
-            card_btn[i].style.display = "block";
-            setTimeout(() => {card_btn[i].style.height = "50px"}, 50)
-            setTimeout(() => {button[i].style.display = "initial"},50)
-            setTimeout(() => {button[i].style.opacity = 1}, 70)
-        }
-    })
-    card_cont[i].addEventListener("touchend", () => {
-        if (mobile == false) {
-            button[i].style.opacity = null
-            setTimeout(() => {button[i].style.display = null}, 100)
-            setTimeout(() => {card_btn[i].style.height = null}, 150)
-            setTimeout(() => {card_btn[i].style.display = null}, 300)    
-        }
-    })
-
-
 }

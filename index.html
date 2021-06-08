@@ -159,7 +159,7 @@
   <script type="text/javascript">
     let desktop = new Boolean();
     checkDesktop = () => {
-      if (window.innerWidth > 1000) {
+      if (window.innerWidth > 1024) {
         return desktop = true
       } else return desktop = false
     }
@@ -169,12 +169,11 @@
     document.querySelectorAll(".card_container").forEach( e => {
       e.addEventListener("mousemove", () => {
         if (desktop == true) {
-         VanillaTilt.init(document.querySelectorAll(".card_container"), {
-		      max: 6,
-          glare: true,
-          "max-glare": 0.3,
-	  	    speed: 200
-  	      });
+         VanillaTilt.init(document.querySelectorAll(".card_container"), {max: 6, glare: true, "max-glare": 0.3, speed: 200});
+        } else {
+          e.addEventListener("touchmove", () => {
+            VanillaTilt.init(document.querySelectorAll(".card_container"), {max: 6, glare: true, "max-glare": 0.3, speed: 200});
+          })
         }
       })
     })
