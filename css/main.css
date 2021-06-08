@@ -23,6 +23,10 @@
      object-position: center top;
 }
 
+.section__head__image img:last-child {
+  display: none;
+}
+
 .section__head__image::after {
   display: block;
   position: absolute;
@@ -362,6 +366,13 @@
 }
 
 @media screen and (max-width: 400px) {
+  .section__head__image img:first-child {
+    display: none;
+  }
+  .section__head__image img:last-child {
+    height: initial;
+    display: initial;
+  }
   .sec__footer__link {
     -webkit-box-align: center;
         -ms-flex-align: center;
