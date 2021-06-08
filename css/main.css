@@ -16,7 +16,7 @@
 
 .section__head__image img {
   width: 100%;
-  height: 600px;
+  min-width: 1280px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center top;
@@ -358,11 +358,14 @@
     padding: 25px;
   }
   .title__container h1 {
-    font-size: 3em;
+    font-size: 2.8em;
   }
 }
 
 @media screen and (max-width: 400px) {
+  .section__head__image img {
+    min-width: 325px;
+  }
   .section__head__image img:first-child {
     display: none;
   }
@@ -447,7 +450,7 @@
   display: grid;
   -ms-grid-columns: 200px auto 150px;
       grid-template-columns: 200px auto 150px;
-  grid-gap: 50px;
+  grid-gap: 30px;
 }
 
 .sec__body__part2 > h1 {
@@ -615,31 +618,42 @@
   }
   .sec__body__part1--para {
     position: initial;
-    max-width: 80%;
-    padding: 70px 0 0 0;
+    padding: 50px 0 0 0;
     top: initial;
     bottom: 0;
     left: 0;
     right: initial;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .sec__body__part1--para h1 {
     text-align: center;
     margin-bottom: 20px;
   }
   .sec__body__part1--para p {
+    width: 90%;
     text-align: center;
   }
 }
 
 @media screen and (max-width: 680px) {
   .section__body {
-    margin: 300px 0 150px 0;
+    margin: 300px 0 100px 0;
   }
   .sec__body__part2 {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
   }
-  .sec__body__part2 h1 {
+  .sec__body__part2 > h1 {
+    font-size: 2em;
     grid-column: 1 / -1;
     -ms-grid-column-align: center;
         justify-self: center;
@@ -647,9 +661,8 @@
   .sec__body__part2 button {
     -ms-grid-column-align: center;
         justify-self: center;
-    width: 250px;
-    height: 50px;
-    font-size: 1.25em;
+    width: 180px;
+    height: 45px;
     -ms-grid-row: 3;
     grid-row: 3;
     grid-column: 1 / -1;
@@ -676,9 +689,6 @@
   }
   .sec__body__part1--para h1 {
     font-size: 2em;
-  }
-  .sec__body__part2 > h1 {
-    font-size: 2.5em;
   }
   .sec__body__part2--grid .card_container > div {
     left: 20px;
