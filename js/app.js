@@ -59,7 +59,7 @@ menu_btn.addEventListener("click", () => {
         window.addEventListener("scroll", noScroll)
         menu_btn.classList.add("open")
         menuCon.style.display = "flex"
-        setTimeout(() => {menuCon.style.height = "100%"}, 30)
+        setTimeout(() => {menuCon.style.height = "150%"}, 30)
         setTimeout(() => {menuText.style.display = "flex"}, 250)
         setTimeout(() => {menuText.style.opacity = 1}, 500)
         return menuState = true
