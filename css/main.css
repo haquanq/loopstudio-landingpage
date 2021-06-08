@@ -23,6 +23,19 @@
      object-position: center top;
 }
 
+.section__head__image::after {
+  display: block;
+  position: absolute;
+  z-index: 4;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, rgba(0, 0, 0, 0.5)), color-stop(40%, rgba(0, 0, 0, 0.1)));
+  background: linear-gradient(rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0.1) 40%);
+}
+
 .sec__head {
   max-width: 1140px;
   min-width: 325px;
@@ -484,8 +497,8 @@
   left: 0;
   right: 0;
   content: "";
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, rgba(0, 0, 0, 0.1)), color-stop(90%, rgba(0, 0, 0, 0.7)));
-  background: linear-gradient(rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.7) 90%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(0, 0, 0, 0.1)), color-stop(70%, rgba(0, 0, 0, 0.6)), color-stop(90%, rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0.8) 90%);
 }
 
 .card_container img {
@@ -493,8 +506,8 @@
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transition: 250ms ease-in-out;
-  transition: 250ms ease-in-out;
+  -webkit-transition: 200ms ease-in;
+  transition: 200ms ease-in;
 }
 
 .card_container > div {
@@ -641,8 +654,8 @@
     grid-gap: 20px;
   }
   .sec__body__part2--grid .card_container::after {
-    background: -webkit-gradient(linear, left top, right top, color-stop(30%, rgba(0, 0, 0, 0.5)), color-stop(90%, rgba(0, 0, 0, 0.05)));
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.05) 90%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(5%, rgba(0, 0, 0, 0.8)), color-stop(20%, rgba(0, 0, 0, 0.6)), color-stop(35%, rgba(0, 0, 0, 0.3)));
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 5%, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.3) 35%);
   }
 }
 
