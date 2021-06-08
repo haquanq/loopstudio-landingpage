@@ -27,17 +27,22 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%; height: 150px;
+    width: 100%; height: 130px;
+    &__logo {
+        position: relative; z-index: 3;
+    }
     &__link {
         display: flex;
         justify-content: space-between;
         width: 380px;
         font-family: "Alata", sans-serif;
         a {
+            font-size: 1em;
             color: white;
         }
     }
     &__menu {
+        position: relative; z-index: 3;
         display: none;
         cursor: pointer;
         span {
@@ -61,6 +66,37 @@
         }
         & span:nth-child(3) {
             transform: translateY(-3px) rotate(-45deg);
+        }
+    }
+}
+// MENU M<ENU MENU MENU MENU
+.nav__menu {
+    position: absolute; z-index: 2;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    height: 0;
+    justify-self: center;
+    background: black;
+    display: none;
+    justify-content: center;
+    transition: 350ms ease-in-out;
+    div {
+        display: none; opacity: 0;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 130px;
+        min-width: 325px; max-width: 1140px;
+        width: 90%;
+        margin-bottom: 100px;
+        transition: 250ms ease;
+        a {
+            margin: 10px 0;
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 1.75em;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: white;
+            opacity: 0.85;
         }
     }
 }

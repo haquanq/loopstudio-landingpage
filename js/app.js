@@ -46,14 +46,27 @@ imgData.resizeImg()
 window.addEventListener("resize", () => { imgData.resizeImg() })
 
 const menu_btn = document.querySelector(".nav__container__menu")
+const menuCon = document.querySelector(".nav__menu")
+const menuText = document.querySelector(".nav__menu div")
+
 let menuState = false
 menu_btn.addEventListener("click", () => {
     if (menuState == false) {
         menu_btn.classList.add("open")
+
+        menuCon.style.display = "flex"
+        setTimeout(() => {menuCon.style.height = "100%"}, 30)
+        setTimeout(() => {menuText.style.display = "flex"}, 250)
+        setTimeout(() => {menuText.style.opacity = 1}, 500)
         return menuState = true
     }
     if (menuState == true) {
         menu_btn.classList.remove("open")
+
+        menuText.style.opacity = 0
+        setTimeout(() => {menuText.style.display = null}, 300)
+        setTimeout(() => {menuCon.style.height = null}, 300)
+        setTimeout(() => {menuCon.style.display = null}, 700)
         return menuState = false
     } 
 })
