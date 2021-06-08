@@ -1,8 +1,8 @@
 const cardImg = document.querySelectorAll(".card_img");
 const cardText = document.querySelectorAll(".card_title");
-const card_btn = document.querySelectorAll(".card_btn");
-const button = document.querySelectorAll(".card_btn button");
 const card_cont = document.querySelectorAll(".card_container")
+const overlayText = document.querySelectorAll(".card_container div h1")
+const overlayBtn = document.querySelectorAll(".card_btn")
 
 const imgData = {
     name: ["curiosity", "deep earth", "fisheye", "from above", "grid", "night arcade", "pocket borealis", "soccer team"],
@@ -62,19 +62,36 @@ window.addEventListener("resize", () => { imgData.resizeImg() })
 
 for (let i = 0; i < card_cont.length; i++) {
     card_cont[i].addEventListener("mouseenter", () => {
-        if (window.innerWidth > 540) {
-            card_btn[i].style.display = "block";
-            setTimeout(() => {card_btn[i].style.height = "50px"}, 50)
-            setTimeout(() => {button[i].style.display = "initial"},50)
-            setTimeout(() => {button[i].style.opacity = 1}, 70)
+        if (window.innerWidth > 550) {
+            cardImg[i].style.transform = "rotate(2deg) scale(1.2)"
+            overlayText[i].style.marginBottom = "50px"
+            setTimeout(() => {overlayBtn[i].style.display = "initial"}, 30)
+            setTimeout(() => {overlayBtn[i].style.opacity = 1}, 50)
         }
     })
     card_cont[i].addEventListener("mouseleave", () => {
-        if (window.innerWidth > 540) {
-            button[i].style.opacity = null
-            setTimeout(() => {button[i].style.display = null}, 100)
-            setTimeout(() => {card_btn[i].style.height = null}, 150)
-            setTimeout(() => {card_btn[i].style.display = null}, 300)    
+        if (window.innerWidth > 550) {
+            cardImg[i].style.transform = null
+            overlayBtn[i].style.opacity = null
+            setTimeout(() => {overlayBtn[i].style.display = null}, 50)
+            setTimeout(() => {overlayText[i].style.marginBottom = null}, 50)
+        }
+    })
+
+    card_cont[i].addEventListener("mouseenter", () => {
+        if (window.innerWidth <= 550) {
+            cardImg[i].style.transform = "rotate(10deg) scale(1.5)"
+            overlayText[i].style.marginBottom = "40px"
+            setTimeout(() => {overlayBtn[i].style.display = "initial"}, 30)
+            setTimeout(() => {overlayBtn[i].style.opacity = 1}, 50)
+        }
+    })
+    card_cont[i].addEventListener("mouseleave", () => {
+        if (window.innerWidth <= 550) {
+            cardImg[i].style.transform = null
+            overlayBtn[i].style.opacity = null
+            setTimeout(() => {overlayBtn[i].style.display = null}, 50)
+            setTimeout(() => {overlayText[i].style.marginBottom = null}, 50)
         }
     })
 }

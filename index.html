@@ -57,72 +57,56 @@
             <img class="card_img" src="" alt="animage">
             <div>
               <h1 class="card_title">deep<br>earth</h1>
-              <div class="card_btn">
-                <button>More Info</button>
-              </div>
+              <button class="card_btn">More Info</button>
             </div>
           </div>
           <div class="card_container">
             <img class="card_img" src="" alt="animage">
             <div>
               <h1 class="card_title">night<br>arcade</h1>
-              <div class="card_btn">
-                <button>More Info</button>
-              </div>
+              <button class="card_btn">More Info</button>
             </div>
           </div>
           <div class="card_container">
             <img class="card_img" src="" alt="animage">
             <div>
               <h1 class="card_title">soccer<br>team vr</h1>
-              <div class="card_btn">
-                <button>More Info</button>
-              </div>
+              <button class="card_btn">More Info</button>
             </div>
           </div>
           <div class="card_container">
             <img class="card_img" src="" alt="animage">
             <div>
               <h1 class="card_title">the<br>grid</h1>
-              <div class="card_btn">
-                <button>More Info</button>
-              </div>
+              <button class="card_btn">More Info</button>
             </div>
           </div>
           <div class="card_container">
             <img class="card_img" src="" alt="animage">
             <div>
               <h1 class="card_title">from up<br>above vr</h1>
-              <div class="card_btn">
-                <button>More Info</button>
-              </div>
+              <button class="card_btn">More Info</button>
             </div>
           </div>
           <div class="card_container">
             <img class="card_img" src="" alt="animage">
             <div>
               <h1 class="card_title">pocket<br>borealis</h1>
-              <div class="card_btn">
-                <button>More Info</button>
-              </div>
+              <button class="card_btn">More Info</button>
             </div>
           </div>
           <div class="card_container">
             <img class="card_img" src="" alt="animage">
             <div>
               <h1 class="card_title">the<br>curiosity</h1>
-              <div class="card_btn">
-                <button>More Info</button>
-              </div>
+              <button class="card_btn">More Info</button>
             </div>
           </div>
           <div class="card_container">
             <img class="card_img" src="" alt="animage">
             <div>
               <h1 class="card_title">make it<br>fisheye</h1>
-              <div class="card_btn">
-                <button>More Info</button>
-              </div>
+              <button class="card_btn">More Info</button>
             </div>
           </div>
         </div>
@@ -159,12 +143,8 @@
   <script type="text/javascript">
     document.querySelectorAll(".card_container").forEach( e => {
       e.addEventListener("mousemove", () => {
-        if (window.innerWidth > 1240) {
+        if (window.innerWidth > 1024) {
          VanillaTilt.init(document.querySelectorAll(".card_container"), {max: 6, glare: true, "max-glare": 0.3, speed: 200});
-        } else {
-          e.addEventListener("touchmove", () => {
-            VanillaTilt.init(document.querySelectorAll(".card_container"), {max: 6, glare: true, "max-glare": 0.3, speed: 200});
-          })
         }
       })
     })

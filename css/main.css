@@ -415,11 +415,12 @@
       grid-template-rows: repeat(auto-fit, minmax(400px, 1fr));
 }
 
-.sec__body__part2--grid .card_container {
+.card_container {
   position: relative;
+  overflow: hidden;
 }
 
-.sec__body__part2--grid .card_container::after {
+.card_container::after {
   position: absolute;
   display: block;
   top: 0;
@@ -431,14 +432,16 @@
   background: linear-gradient(rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.7) 90%);
 }
 
-.sec__body__part2--grid .card_container img {
+.card_container img {
   display: block;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
 }
 
-.sec__body__part2--grid .card_container > div {
+.card_container > div {
   left: 40px;
   bottom: 30px;
   position: absolute;
@@ -447,27 +450,26 @@
   pointer-events: none;
 }
 
-.sec__body__part2--grid .card_container h1 {
+.card_container > div h1 {
+  position: relative;
   font-size: 2em;
   font-weight: 300;
   color: white;
   letter-spacing: 1px;
   text-transform: uppercase;
+  margin-bottom: 0;
+  -webkit-transition: 150ms ease-in-out;
+  transition: 150ms ease-in-out;
 }
 
-.card_btn {
-  display: none;
-  height: 0;
-  -webkit-transition: 150ms ease;
-  transition: 150ms ease;
-}
-
-.card_btn button {
+.card_container > div button {
   display: none;
   opacity: 0;
-  margin-top: 10px;
-  width: 100px;
-  height: 30px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 120px;
+  height: 40px;
   font-family: "Alata", sans-serif;
   background: transparent;
   color: white;
@@ -481,8 +483,8 @@
 }
 
 @media (hover: hover) {
-  .card_btn > button:hover {
-    width: 120px;
+  .card_container div > button:hover {
+    width: 140px;
   }
   .sec__body__part2 > button:hover {
     color: white;
@@ -586,25 +588,27 @@
     background: -webkit-gradient(linear, left top, right top, color-stop(30%, rgba(0, 0, 0, 0.5)), color-stop(90%, rgba(0, 0, 0, 0.05)));
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.05) 90%);
   }
-  .sec__body__part2--grid .card_container h1 {
-    font-size: 1.8em;
-    left: 20px;
-    bottom: 20px;
-  }
 }
 
 @media screen and (max-width: 550px) {
-  .title__container {
-    padding: 25px;
-  }
-  .title__container h1 {
-    font-size: 3em;
+  .card_container div > button {
+    height: 30px;
   }
   .sec__body__part1--para {
     max-width: 100%;
   }
   .sec__body__part1--para h1 {
     font-size: 2em;
+  }
+  .sec__body__part2 > h1 {
+    font-size: 2.5em;
+  }
+  .sec__body__part2--grid .card_container > div {
+    left: 20px;
+    bottom: 15px;
+  }
+  .sec__body__part2--grid .card_container h1 {
+    font-size: 1.5em;
   }
 }
 
